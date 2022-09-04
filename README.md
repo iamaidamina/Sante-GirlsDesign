@@ -6,10 +6,16 @@ This web app allows a homecare company to manage information relative to its car
 
 1. [Development Team](#development-team)
 2. [Tech Stack](#tech-stack)
-3. Database
-4. Mockups
+3. [Database](#)
+4. [Mockups](#)
 
 ## Development Team
-
+- Laura Barreto
+- Laura Olivares
+- Aida Mina
 
 ## Tech Stack
+- Data Layer
+  - PostgreSQL
+  - Heroku
+  - TablePlus
