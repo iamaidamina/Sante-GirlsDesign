@@ -4,8 +4,8 @@ This web app allows a homecare company to manage information relative to its car
 
 ## Table of Contents
 
-1. [Development Team](#Development-Team)
-2. [Tech Stack](#Tech-Stack)
+1. [Development Team](#development-team)
+2. [Tech Stack](#tech-stack)
 3. Database
 4. Mockups
 
