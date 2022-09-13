@@ -1,7 +1,8 @@
 from django.db import models
 from .rol import Rol
-# date type: DateFile -- EmailFile
-#if primary key is not serial or autoincrement (primary_key=True, unique=True, max_length=size)
+
 class Usuario(models.Model):
-    rol_id = models.AutoField(primary_key=True)
-    rol_name = models.CharField('rol',max_length=100)
+    usuario_id = models.AutoField(primary_key=True)
+    rol_id = models.ForeignKey(Rol, related_name='usuario', on_delete=models.CASCADE)
+    nombre_usuario = models.CharField('nombre_usuario',max_length=200)
+    contrasenha = models.CharField('contrasenha',max_length=20)
