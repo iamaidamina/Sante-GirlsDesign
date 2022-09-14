@@ -1,4 +1,3 @@
-from .rol import Rol
 from .usuario import Usuario
 from .especialidad import Especialidad
 from .personalsalud import PersonalSalud
