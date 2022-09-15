@@ -8,11 +8,15 @@ This web app allows a homecare company to manage information relative to its car
 2. [Tech Stack](#tech-stack)
 3. [Database](#)
 4. [Mockups](#)
+5. [Instruciones para correr el projecto localmente](#)
+6. [Comando activar el servidor](#)
+7. [Comando para servir el app](#)
 
 ## Development Team
 - Laura Barreto
 - Laura Olivares
 - Aida Mina
+- Johanna Mora F
 
 ## Tech Stack
 - Data Layer
