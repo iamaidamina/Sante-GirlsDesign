@@ -19,3 +19,16 @@ This web app allows a homecare company to manage information relative to its car
   - PostgreSQL
   - Heroku
   - TablePlus
+
+# Instruciones para correr el projecto localmente
+- Para correr el projecto localmente es necesario crear el entorno de python ( env ).
+- Para esto se debe correr el comando 'python -m venv env' desde el folder 'sante-be'.
+- Posteriormente se debe instalar django y dejango rest framework corriendo el comando: "pip install django & pip install djangorestframework"
+
+# Comando activar el servidor
+- source env/bin/activate para mac
+- env/bin/activate para windows
+
+# Comando para servir el app
+- python manage.py runserver
+- Se ejecutará el servidor localmente en la dirección http://127.0.0.1:8000/
