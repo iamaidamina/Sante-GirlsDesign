@@ -22,8 +22,12 @@ This web app allows a homecare company to manage information relative to its car
 
 # Instruciones para correr el projecto localmente
 - Para correr el projecto localmente es necesario crear el entorno de python ( env ).
-- Para esto se debe correr el comando 'python -m venv env' desde el folder 'sante-be'.
-- Posteriormente se debe instalar django y dejango rest framework corriendo el comando: "pip install django & pip install djangorestframework"
+- - Correr el comando 'python -m venv env' desde el folder 'sante-be'.
+
+- Posteriormente se debe instalar django, django rest-framework y psycopg2 corriendo el comando: 
+- - pip install django 
+- - pip install djangorestframework
+- - pip install psycopg2
 
 # Comando activar el servidor
 - source env/bin/activate para mac
