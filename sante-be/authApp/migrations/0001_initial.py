@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Usuario',
+            name='User',
             fields=[
                 ('last_login', models.DateTimeField(blank=True, null=True, verbose_name='last login')),
                 ('is_superuser', models.BooleanField(default=False, help_text='Designates that this user has all permissions without explicitly assigning them.', verbose_name='superuser status')),
@@ -73,7 +73,7 @@ class Migration(migrations.Migration):
                 ('correo_electronico', models.EmailField(max_length=100, verbose_name='correo_electronico')),
                 ('registro', models.CharField(max_length=25, verbose_name='registro')),
                 ('especialidad_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='personalsalud', to='authApp.especialidad')),
-                ('usuario_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='personalsalud', to=settings.AUTH_USER_MODEL)),
+                ('User_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='personalsalud', to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
@@ -92,7 +92,7 @@ class Migration(migrations.Migration):
                 ('ciudad', models.CharField(max_length=150, verbose_name='ciudad')),
                 ('latitud_longitud', models.CharField(max_length=300, verbose_name='latitud_longitud')),
                 ('ps_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='paciente', to='authApp.personalsalud')),
-                ('usuario_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='paciente', to=settings.AUTH_USER_MODEL)),
+                ('User_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='paciente', to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.AddField(
@@ -118,7 +118,7 @@ class Migration(migrations.Migration):
                 ('telefono', models.CharField(max_length=15, verbose_name='telefono')),
                 ('correo_electronico', models.EmailField(max_length=100, verbose_name='correo_electronico')),
                 ('paciente_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='familiar', to='authApp.paciente')),
-                ('usuario_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='familiar', to=settings.AUTH_USER_MODEL)),
+                ('User_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='familiar', to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

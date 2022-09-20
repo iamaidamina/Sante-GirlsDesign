@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from appHospital.models.user import User
-from appHospital.models.account import Account
-from appHospital.serializers.accountSerializer import AccountSerializer
+from authApp.models.user import User
+from authApp.models.account import Account
+from authApp.serializers.accountSerializer import AccountSerializer
 
 class UserSerializer(serializers.ModelSerializer):
     account = AccountSerializer(read_only=True)
