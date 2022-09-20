@@ -70,7 +70,7 @@ REST_FRAMEWORK = {
     )
 }
 
-AUTH_USER_MODEL = 'authApp.Usuario'
+AUTH_USER_MODEL = 'authApp.user'
 
 ROOT_URLCONF = 'authProject.urls'
 

@@ -1,11 +1,11 @@
 from django.db import models
 from .especialidad import Especialidad
-from .usuario import Usuario
+from .user import User
 
 class PersonalSalud(models.Model):
     ps_id = models.AutoField(primary_key=True)
     especialidad_id = models.ForeignKey(Especialidad, related_name='personalsalud', on_delete=models.CASCADE)
-    usuario_id = models.ForeignKey(Usuario, related_name='personalsalud', on_delete=models.CASCADE)
+    User_id = models.ForeignKey(User, related_name='personalsalud', on_delete=models.CASCADE)
     nombre = models.CharField('nombre',max_length=100)
     apellido = models.CharField('apellido',max_length=100)
     tipo_documento = models.CharField('tipo_documento',max_length=10)
