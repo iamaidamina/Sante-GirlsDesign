@@ -1,0 +1,13 @@
+ /* Programacion Ciclo 3
+ Grupo 6
+ Autores: Johanna Mora Fajardo, */
+ 
+form{
+    padding:16px;
+}
+.title {
+    padding:16px 0 0 8px;
+}
+.form-group{
+    margin:0 0 16px 0;
+}

@@ -1,0 +1,142 @@
+ /* Programacion Ciclo 3
+    Grupo 6
+    Autores: Johanna Mora Fajardo, 
+*/
+
+img#logo_usuario{
+    width: 25px;
+    margin: auto;
+}
+
+.logos_caja2{
+    width: 35px;
+}
+
+.logos_caja3{ 
+    width: 15px;
+}
+
+
+div{
+    margin: 8px;
+}
+
+#caja-1{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin:8px;
+    
+    border-radius: 5px;
+    background: rgb(196, 191, 191);
+    color: rgb(44, 18, 18);
+}
+#caja-3-home{
+    width: 30%;
+   
+}
+#caja-2{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgb(133, 131, 131);
+    border-radius: 5px;
+     
+}
+#caja-2-home{
+    width: 70%;
+    display: flex;
+    border: 1px solid rgb(133, 131, 131);
+    border-radius: 5px;
+    flex-direction: column;
+     
+}
+#caja-2-home .logos_caja2{ 
+    width: 60px;
+}
+#caja-3-home{
+    width: 70%;
+    display: flex;
+    border: 1px solid rgb(133, 131, 131);
+    border-radius: 5px;
+    flex-direction: column;
+    justify-content: center;
+     
+}
+
+#caja-3{
+    width: 30%;
+    display: block;
+    border: 1px solid rgb(133, 131, 131);
+    border-radius: 5px;
+}
+
+#cajas-dos-tres{
+    display: flex;
+    height: 50vh;
+}
+#caja_usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 8px;
+}
+
+#titulo {
+    /* border: 1px dashed black; */
+    margin: 8px;
+    width: inherit;
+    text-align: center;
+}
+#caja-2 .sub_cajas {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: fit-content;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#caja_registrar{
+    width: 100%;
+    display: block;
+}
+a{
+    color:darkblue;
+}
+a:hover{
+    color:rgb(139, 0, 42);
+}
+
+#usuario:hover{
+    color:cornflowerblue;
+}
+
+.menu-home{
+    display:block;
+    text-align: center;
+    width: 100%;
+}
+
+.home{
+    width: 70%;
+    margin:16px auto;
+}
+.titulo-home {
+    text-align: center;
+}
+
+div#caja-3-home .cajas {
+    text-align: center;
+}
+
+#formulario-login {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.imagen-home {
+    width: 350px;
+    margin: auto;
+}
