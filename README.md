@@ -32,10 +32,13 @@ This web app allows a homecare company to manage information relative to its car
 - -  env/bin/activate para windows
 
 - Posteriormente se debe instalar django, django rest-framework, jwt y psycopg2 corriendo los siuientes comandos: 
-- - pip install django 
-- - pip install djangorestframework
-- - pip install psycopg2
-- - pip install djangorestframework-simplejwt
+python3 -m pip install 
+- -  django 
+- -  djangorestframework
+- -  psycopg2
+- -  djangorestframework-simplejwt
+- - django_heroku
+
 
 # Comando para servir el app
 - python manage.py runserver
