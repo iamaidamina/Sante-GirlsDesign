@@ -42,10 +42,10 @@ class HistoriaClinicaDetail(APIView):
         serializer = HistoriaClinicaSerializer(historiaclinica, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data)
+            return Response("message:Sucess")
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk, format=None):
         historiaclinica = self.get_object(pk)
         historiaclinica.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response("message:Sucess")

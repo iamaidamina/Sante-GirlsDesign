@@ -42,10 +42,10 @@ class PacienteDetail(APIView):
         serializer = PacienteSerializer(paciente, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data)
+            return Response("message: Success")
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk, format=None):
         paciente = self.get_object(pk)
         paciente.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response("message: Success")
