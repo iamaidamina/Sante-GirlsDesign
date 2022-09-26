@@ -2,6 +2,7 @@
     <div id="app" class="app">
        <div class="header">
           <h1>Sante Hospital App</h1>
+          <img src='./assets/images/LogoSante1.png'>
           <nav>
              <button v-if="is_auth" v-on:click="loadHome"> Inicio </button>
              <!-- <button v-if="is_auth" > Cuenta </button> -->
