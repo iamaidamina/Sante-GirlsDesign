@@ -1,0 +1,20 @@
+# Sante Hospital
+Para poder correr este projecto localmete es necesario tener instalado Node.js / Node Package Manager ( npm ).
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
