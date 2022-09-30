@@ -1,65 +1,23 @@
 <template>
     <div class="left-sidebar">
         <img src = "./../assets/images/user.png" height="120" width="120">
-        <span style="text-align:center; margin:30px; font-size:30px">Bienvenido: <br>{{username}}</span> 
+        <span style="text-align:center; margin:30px; font-size:30px">Buscar Personal Salud</span> 
+       
     </div>
     <div class="content sau">
-        <div class="box-container">
-           
-            <div class="box">
-                <a class="box-item" v-on:click="loadPersonaSalud" >
-                    <br>
-                    <img src = "./../assets/images/personalsalud1.png" height="90" width="90">
-                    <br>
-                    <h3>Personal Salud</h3>
-                </a>
+        <form id="FormularioSerchPs">
+            <div class="form-group">
+                <span>Busque personal de salud ingresando el ID</span><br><br>
+                <label>ID Ps:</label> <input type="text" class="campo_texto searchId">
             </div>
-
-            <div class="box">
-                <a class="box-item" v-on:click="loadHistoriaclinica" >
-                    <br>
-                    <img src = "./../assets/images/historiaclinica2.png" height="90" width="90">
-                    <br>
-                    <h3>Historia Clínica</h3>
-                </a>
-            </div>
-
-            <div class="box">
-                <a class="box-item" v-on:click="loadSignosvitales" >
-                    <br>
-                    <img src = "./../assets/images/signosvitales2.png" height="90" width="90">
-                    <br>
-                    <h3>Signos Vitales</h3>
-                </a>
-            </div>
-
-            <div class="box">
-
-                <a class="box-item" v-on:click="loadPaciente" >
-                    <br>
-                    <img src = "./../assets/images/paciente2.png" height="90" >
-                    <br>
-                    <h3>Paciente</h3>
-
-                </a>
-
-            </div>
-            <div class="box">
-                <a class="box-item" v-on:click="loadfamiliar" >
-            
-                    <br>
-                    <img src = "./../assets/images/familiar2.png" height="90" width="90">
-                    <br>
-                    <h3>Familiar</h3>
-                </a>
-            </div>
-        </div>
+        </form>
+        <a v-on:click="loadHome">Atras</a>
     </div>
 </template>
     
 <script>
     export default {
-    name: "Home",
+    name: "SearchPs",
     data: function() {
         return {
             username: localStorage.getItem('username') || "none"
@@ -67,43 +25,74 @@
     },
     components: {},
     methods: {
-        loadPaciente: function() {
-            console.log("Si funciona");
-            this.$router.push({
-                    name: "paciente"
-                });
-        },
-        loadfamiliar: function() {
-            console.log("Si funciona");
-            this.$router.push({
-                    name: "familiar"
-                });
-        },
-        loadHistoriaclinica: function() {
-            console.log("Si funciona");
-            this.$router.push({
-                    name: "historiaclinica"
-                });
-        },
-        loadSignosvitales: function() {
-            console.log("Si funciona");
-            this.$router.push({
-                    name: "signosvitales"
-                });
-        },
-        loadPersonaSalud: function() {
+        loadHome: function() {
             console.log("Si funciona");
             this.$router.push({
                     name: "personalsalud"
+                });
+        },
+        loadSearchPs: function() {
+            console.log("Si funciona");
+            this.$router.push({
+                    name: "home"
+                });
+        },
+        loadCreatePs: function() {
+            console.log("Si funciona");
+            this.$router.push({
+                    name: "home"
                 });
         },
     }
 }
 </script>
 <style> 
-    
+    #FormularioSerchPs input{
+        height: 30px;
+        width: 100%;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 16px;
+    }
+    #FormularioSerchPs div span{
+        height: 30px;
+        width: 100%;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 16px;
+        display: block;
+    }
+    #FormularioSerchPs div label{
+        height: 30px;
+        margin: auto;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        display: block;
+    }
+     .form-group {
+        margin: 16px;
+    }
+    .greetings{
+        margin: 0;
+        padding: 0%;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .greetings h1{
+        font-size: 50px;
+        color: #283747;
+    }
+    .greetings span{
+        color: #396fd5;
+        font-weight: bold;
+    }
     .logo {
-     margin-left: 30px;
+    margin-left: 30px;
     }
 
     .logo a {
@@ -118,7 +107,9 @@
         font-size: 60px;
         font-weight: 600;
         text-transform: uppercase;
-        color: rgb(0, 0, 0)  
+        color: rgb(0, 0, 0)
+        
+    
     }
 
     .title{
@@ -140,10 +131,16 @@
         color: rgb(0, 0, 0);
         text-decoration: none;
         background: rgb(111, 168, 220);
+
+        
     }
+
     .btn:hover {
         background: none;
+    
+        
     }
+
     .content {
         height: auto;
         display: flex;
@@ -156,10 +153,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center !important;
+        justify-content: flex-start;
+        align-items: center;
         margin: 100px 0;
         padding: 16px 0;
-
     }
     .sau {
         padding: 30px;
@@ -185,6 +182,8 @@
         margin: 2rem;   
     }
 
+
+
     .box-container .box h3 {
         font-size: 20px;
         color:rgb(19,79,92);
@@ -205,7 +204,8 @@
         .navbar {
             display: none;
         }
-
-        img{display: none;}
+    
+        
     }
+
 </style>
