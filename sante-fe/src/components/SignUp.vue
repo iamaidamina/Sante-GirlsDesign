@@ -11,8 +11,6 @@
              <br>
              <input type="email" v-model="user.email" placeholder="Email">
              <br>
-             <input type="number" v-model="user.account.balance" placeholder="Initial Balance">
-             <br>
              <button type="submit">Registrarse</button>
           </form>
        </div>
@@ -29,20 +27,21 @@ export default {
                 password: "",
                 name: "",
                 email: "",
-                account: {
-                    lastChangeDate: (new Date()).toJSON().toString(),
-                    balance: 0,
-                    isActive: true
-                }
             }
         }
     },
     methods: {
+        // Funcion que conecta con el back en usando axios.post()
+        // - 1. La url del backend
+        // - 2. El json con el contenido a enviar.
         processSignUp: function() {
             axios.post(
-                    "https://mision-tic-bank-be.herokuapp.com/user/",
-                    this.user, {
-                        headers: {}
+                    "https://sane-hospital-vjoha.herokuapp.com/user/",
+                    {
+                        username: this.user.username,
+                        password: this.user.password,
+                        name: this.user.name,
+                        email: this.user.email,
                     }
                 )
                 .then((result) => {
@@ -73,6 +72,7 @@ export default {
      display: flex;
      justify-content: center;
      align-items: center;
+     margin: 164px 0 144px 0;
 }
  .container_signUp_user {
      border : 3px solid #283747 ;
