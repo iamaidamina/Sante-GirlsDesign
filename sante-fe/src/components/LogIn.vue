@@ -21,7 +21,7 @@
     </div>
 </template>
  <script>
-    import axios from 'axios';
+    import axios from 'axios'
     export default {
         name: "LogIn",
         data: function() {
@@ -30,14 +30,15 @@
                     username: "",
                     password: ""
                 }
+                
             }
-        },
+        }, 
         methods: {
             // Funcion que conecta con el back en usando axios.post()
             processLogInUser: function() {
                 console.log('Si funciona!');
                 axios.post(
-                        "https://sane-hospital-vjoha.herokuapp.com/login/",
+                        "https://mision-tic-sante-be.herokuapp.com/login/",
                         {
                             "username":this.user.username,
                             "password":this.user.password,
