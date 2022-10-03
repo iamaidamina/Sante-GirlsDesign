@@ -142,7 +142,7 @@
         background: rgb(111, 168, 220);
     }
     .btn:hover {
-        background: none;
+        
     }
     .content {
         height: auto;

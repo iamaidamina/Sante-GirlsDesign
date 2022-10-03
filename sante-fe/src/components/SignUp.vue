@@ -36,7 +36,7 @@ export default {
         // - 2. El json con el contenido a enviar.
         processSignUp: function() {
             axios.post(
-                    "https://sane-hospital-vjoha.herokuapp.com/user/",
+                    "https://mision-tic-sante-be.herokuapp.com/users/",
                     {
                         username: this.user.username,
                         password: this.user.password,

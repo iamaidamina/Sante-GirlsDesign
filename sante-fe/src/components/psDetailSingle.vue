@@ -1,34 +1,46 @@
 <template>
     <div class="left-sidebar">
         <img src = "./../assets/images/user.png" height="120" width="120">
-        <span style="text-align:center; margin:30px; font-size:30px">Buscar Personal Salud</span> 
+        <span style="text-align:center; margin:30px; font-size:30px">Personal Salud Single</span> 
        
     </div>
     <div class="content">
-        <form id="FormularioSerchPs" v-on:submit.prevent="processPsSearch">
-            <div class="form-group">
-                <span>Busque personal de salud ingresando el ID</span><br><br>
-               <input v-model="ps.id" type="text" class="campo_texto searchId">
-               <div class="buttons">
-                <button class="btn buscar" type="submit">Buscar</button>
-                <button class="btn atras" v-on:click="loadHome">Atras</button>
-               </div> 
-               
-            </div>
-        </form>
+        <div class="ps_data">
+            <ul>
+                <li><span>Nombre: </span>{{nombre}}</li>
+                <li><span>Apellido: </span>{{apellido}}</li>
+                <li><span>tipo_documento: </span>{{tipo_documento}}</li>
+                <li><span>genero: </span>{{genero}}</li>
+                <li><span>tipo: </span>{{tipo}}</li>
+                <li><span>ciudad: </span>{{ciudad}}</li>
+                <li><span>fecha_nacimiento: </span>{{fecha_nacimiento}}</li>
+                <li><span>especialidad_id: </span>{{especialidad_id}}</li>
+                <li><span>registro: </span>{{registro}}</li>
+                <li><span>telefono: </span>{{telefono}}</li>
+                <li><span>correo_electronico</span>: {{correo_electronico}}</li>
+            </ul>
+            <button v-on:click="loadHome" class="btn"> Atras </button>
+        </div>
 
     </div>
 </template>
     
 <script>
-    import axios from 'axios';
+
     export default {
-    name: "SearchPs",
+    name: "PsDetailSingle",
     data: function() {
         return {
-            ps: {
-                id: ""
-            }
+            nombre: localStorage.getItem("nombre"),
+            apellido:localStorage.getItem("apellido"),
+            tipo_documento:localStorage.getItem("tipo_documento"),
+            genero: localStorage.getItem("genero"),
+            tipo: localStorage.getItem("tipo"),
+            fecha_nacimiento: localStorage.getItem("fecha_nacimiento"),
+            especialidad_id:  localStorage.getItem("especialidad_id"),
+            registro: localStorage.getItem("registro"),
+            telefono:  localStorage.getItem("telefono"),
+            correo_electronico:  localStorage.getItem("correo_electronico")
         }
     },
     components: {},
@@ -36,7 +48,7 @@
         loadHome: function() {
             console.log("Si funciona");
             this.$router.push({
-                    name: "personalsalud"
+                    name: "searchPs"
                 });
         },
         loadSearchPs: function() {
@@ -49,33 +61,6 @@
             console.log("Si funciona");
             this.$router.push({
                     name: "home"
-                });
-        },
-        processPsSearch: function() {
-            let url = "https://mision-tic-sante-be.herokuapp.com/personalsalud/" + this.ps.id;
-            axios.get(url)
-                .then((result) => {
-                    //alert("Exito");
-                    localStorage.setItem("nombre",result.data.nombre);
-                    localStorage.setItem("apellido",result.data.apellido);
-                    localStorage.setItem("tipo_documento",result.data.tipo_documento);
-                    localStorage.setItem("genero",result.data.genero);
-                    localStorage.setItem("tipo",result.data.tipo_documento);
-                    localStorage.setItem("fecha_nacimiento",result.data.fecha_nacimiento);
-                    localStorage.setItem("especialidad_id",result.data.especialidad_id);
-                    localStorage.setItem("registro",result.data.registro);
-                    localStorage.setItem("telefono",result.data.telefono);
-                    localStorage.setItem("correo_electronico",result.data.correo_electronico);
-
-                    this.$router.push({
-                        name: "pssingle",
-                    });
-                    console.log(result);
-
-                })
-                .catch((error) => {
-                    console.log(error.response);
-                    alert("Error... ");
                 });
         }
     }

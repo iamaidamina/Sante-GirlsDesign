@@ -135,7 +135,7 @@ p {
 
 
     .btn:hover {
-        background: none;
+        
     
         
     }

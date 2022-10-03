@@ -13,6 +13,7 @@ import Familiar from './components/Familiar.vue'
 import Historia_clinica from './components/Historia_clinica.vue'
 import Signos_vitales from './components/Signos_Vitales.vue'
 import Paciente from './components/Paciente.vue'
+import PsDetailSingle from './components/psDetailSingle.vue'
 
 const routes = [{
       path: '/',
@@ -68,6 +69,11 @@ const routes = [{
     path: '/user/Historiaclinica',
     name: "historiaclinica",
     component: Historia_clinica
+  },
+  {
+    path: '/user/personalsalud/single',
+    name: "pssingle",
+    component: PsDetailSingle
   },
   
 ];

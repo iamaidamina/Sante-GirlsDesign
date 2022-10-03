@@ -184,15 +184,17 @@
         gap: 22px;
     }
     .header nav button {
-        color : #E5E7E9 ;
-        background : #283747 ;
+        color : white;
+        background : #71c7ec ;
         border : 1px solid #E5E7E9 ;
         border-radius : 5px ;
         padding : 10px 20px ;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
     }
     .header nav button:hover {
-        color : #283747 ;
-        background : #E5E7E9 ;
+        background : 	#107dac ;
         border : 1px solid #E5E7E9 ;
     }
     .main-component {
@@ -207,6 +209,14 @@
     }
     a{
         cursor: pointer;
+    }
+
+    .buscar,.atras{
+        max-width: 150px;
+        color: white !important;
+        margin: 16px;
+        font-weight: bold;
+        font-size: 16px;
     }
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
     *{
@@ -285,6 +295,47 @@
 
         height: 20px;
         width: 50px;
+    }
+
+    .content {width: 70%}
+
+    .content.formulario form {
+        border: 1px solid #000;
+        display: block;
+        margin: 144px 0;
+        width: 70%;
+        padding: 10px;
+        font-size: 27px;
+        border: 2px solid #189ad3;
+
+    }
+
+    form button.btn {
+        font-size: 24px;
+        color: white;
+    }
+
+    .form-group {
+        margin: 16px;
+        height: 40px;
+        display: flex;
+        justify-content: flex-start;
+        gap: 29px;
+    }
+
+    .form-group input, .form-group select {
+        border: 2px solid #189ad3;
+        border-radius: 5px;
+    }
+
+    form#FormularioSerchPs {
+        display: block;
+    }
+    form#FormularioSerchPs .form-group{
+        display: block;
+    }
+    .buttons {
+        display: flex;
     }
     @media screen and (max-width:800px){
         .pie-pagina .grupo-1{

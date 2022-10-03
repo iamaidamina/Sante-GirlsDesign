@@ -4,7 +4,7 @@
         <span style="text-align:center; margin:30px; font-size:30px">Crear Personal Salud</span> 
        
     </div>
-    <div class="content sau">
+    <div class="content formulario">
         <form id="create-ps-form" v-on:submit.prevent="processPsSignUp">
         <div class="form-group">
             <label>Nombre:</label> <input type="text" class="campo_texto nombre" v-model="ps.nombre">
@@ -63,7 +63,7 @@
         <label>Registro: </label> <input type="text" class="campo_registro" v-model="ps.registro">
         </div>
         <button type="submit" class="btn btn-primary">Registrar</button>
-        <button type="submit" class="btn btn-secondary" v-on:click="loadHome">Atras</button>
+        <button class="btn btn-secondary" v-on:click="loadHome">Atras</button>
     </form>
     </div>
 </template>
@@ -117,7 +117,7 @@
         // - 2. El json con el contenido a enviar.
         processPsSignUp: function() {
             axios.post(
-                    "https://sane-hospital-vjoha.herokuapp.com/ps/",
+                    "https://mision-tic-sante-be.herokuapp.com/personalsalud/",
                     {
                         nombre: this.ps.nombre,
                         apellido: this.ps.apellido,
@@ -126,7 +126,7 @@
                         genero: this.ps.genero,
                         tipo: this.ps.tipo,
                         ciudad: this.ps.ciudad,
-                        fecha_nacimiento: "2009-09-09",
+                        fecha_nacimiento: this.ps.fecha_nacimiento,
                         especialidad_id: this.ps.especialidad_id,
                         registro: this.ps.registro,
                         telefono: this.ps.telefono,
@@ -135,7 +135,7 @@
                     }
                 )
                 .then((result) => {
-                    console.log("Registro exitoso.")
+                    alert("Registro exitoso.")
                     this.$router.push({
                         name: "personalsalud"
                     });
@@ -143,7 +143,10 @@
                 })
                 .catch((error) => {
                     console.log(error.response.data);
-                    alert("ERROR: Fallo en el registro.");
+                    alert("Error en el registro. ");
+                    this.$router.push({
+                        name: "personalsalud"
+                    });
 
                 });
         }
@@ -226,9 +229,7 @@
     }
 
     .btn:hover {
-        background: none;
-    
-        
+        background: #005073;   
     }
 
     .content {

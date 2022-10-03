@@ -37,7 +37,7 @@
             processLogInUser: function() {
                 console.log('Si funciona!');
                 axios.post(
-                        "https://sane-hospital-vjoha.herokuapp.com/login/",
+                        "https://mision-tic-sante-be.herokuapp.com/login/",
                         {
                             "username":this.user.username,
                             "password":this.user.password,
@@ -102,18 +102,20 @@
      border: 1px solid #283747;
 }
  .logIn_user button{
-     width: 100%;
-     height: 40px;
-     color: #E5E7E9;
-     background: #283747;
-     border-radius: 5px;
-     padding: 10px 25px;
-     margin: 5px 0;
+    width: 100%;
+    height: 40px;
+    color : white;
+    background : #71c7ec ;
+    border : 1px solid #E5E7E9 ;
+    border-radius : 5px ;
+    padding: 10px 25px;
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
 }
- .logIn_user button:hover{
-     color: #E5E7E9;
-     background: crimson;
-     border: 1px solid #283747;
+ .logIn_user button:hover{ 
+    background :#107dac ;
+    font-weight: bold;
 }
 .left-sidebar{
     width:28%;
