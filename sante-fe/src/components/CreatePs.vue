@@ -16,8 +16,8 @@
             <label>Tipo de Documento: </label>
             <select type="text" class="campo_texto " v-model="ps.tipo_documento">
                 <option>   </option>
-                <option>T.I</option>
                 <option>C.C</option>
+                <option>C.E</option>
             </select> 
         </div>
         <div class="form-group">
@@ -32,11 +32,13 @@
             </select>
          </div>
          <div class="form-group">
-            <label>Tipo: </label>
-            <select type="text" class="campo_texto " v-model="ps.tipo">
+            <label>Especialidad: </label>
+            <select type="text" class="campo_texto " v-model="ps.especialidad_id">
                 <option>   </option>
-                <option>Medico</option>
-                <option>Enfermera</option>
+                <option value=1 >1. Enfermería</option>
+                <option value=2 >2. Medicina General</option>
+                <option value=3 >3. Ortopedía</option>
+                <option value=4 >4. Geriatría</option>
             </select>
         </div>
         <div class="form-group">
@@ -52,16 +54,20 @@
             <label>Fecha Nacimiento:</label> <input type="date" class="campo_texto " v-model="ps.fecha_nacimiento">
        </div>
         <div class="form-group">
-            <label>Especialidad: </label>
-            <select type="text" class="campo_especialidad" v-model="ps.especialidad_id">
-                <option>   </option>
-                <option>1</option>
-                <option>2</option>
-            </select>
-         </div>
-        <div class="form-group">
         <label>Registro: </label> <input type="text" class="campo_registro" v-model="ps.registro">
         </div>
+        <div class="form-group">
+            <label>Usuario: </label>
+            <select type="text" class="campo_texto " v-model="ps.User_id">
+                <option>   </option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+            </select>
+         </div>
         <button type="submit" class="btn btn-primary">Registrar</button>
         <button type="submit" class="btn btn-secondary" v-on:click="loadHome">Atras</button>
     </form>
@@ -80,14 +86,13 @@
                 tipo_documento: "",
                 numero_documento: "",
                 genero: "",
-                tipo: "",
                 ciudad: "",
                 fecha_nacimiento: "",
                 especialidad_id: "",
                 registro: "",
                 telefono: "",
                 correo_electronico: "",
-                User_id: 1,
+                User_id: "",
             }
         }
     },
@@ -117,21 +122,20 @@
         // - 2. El json con el contenido a enviar.
         processPsSignUp: function() {
             axios.post(
-                    "https://sane-hospital-vjoha.herokuapp.com/ps/",
+                    "https://mision-tic-sante-be.herokuapp.com/personalsalud/",
                     {
                         nombre: this.ps.nombre,
                         apellido: this.ps.apellido,
                         tipo_documento: this.ps.tipo_documento,
                         numero_documento: this.ps.numero_documento,
                         genero: this.ps.genero,
-                        tipo: this.ps.tipo,
                         ciudad: this.ps.ciudad,
-                        fecha_nacimiento: "2009-09-09",
+                        fecha_nacimiento: this.ps.fecha_nacimiento,
                         especialidad_id: this.ps.especialidad_id,
                         registro: this.ps.registro,
                         telefono: this.ps.telefono,
                         correo_electronico: this.ps.correo_electronico,
-                        User_id: 1
+                        User_id: this.ps.User_id
                     }
                 )
                 .then((result) => {
