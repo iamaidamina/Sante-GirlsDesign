@@ -16,8 +16,8 @@
             <label>Tipo de Documento: </label>
             <select type="text" class="campo_texto " v-model="ps.tipo_documento">
                 <option>   </option>
-                <option>T.I</option>
                 <option>C.C</option>
+                <option>C.E</option>
             </select> 
         </div>
         <div class="form-group">
@@ -31,17 +31,6 @@
                 <option>F</option>
             </select>
          </div>
-         <div class="form-group">
-            <label>Tipo: </label>
-            <select type="text" class="campo_texto " v-model="ps.tipo">
-                <option>   </option>
-                <option>Medico</option>
-                <option>Enfermera</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Ciudad:</label> <input type="text" class="campo_texto " v-model="ps.ciudad">
-       </div>
        <div class="form-group">
             <label>Telefono:</label> <input type="text" class="campo_texto " v-model="ps.telefono">
        </div>
@@ -55,13 +44,31 @@
             <label>Especialidad: </label>
             <select type="text" class="campo_especialidad" v-model="ps.especialidad_id">
                 <option>   </option>
-                <option>1</option>
-                <option>2</option>
+                <option value=1>Enfermería</option>
+                <option value=2>General</option>
+                <option value=3>Ortopedía</option>
+                <option value=4>Geriatría</option>
             </select>
          </div>
         <div class="form-group">
         <label>Registro: </label> <input type="text" class="campo_registro" v-model="ps.registro">
         </div>
+        <div class="form-group">
+            <label>Usuario: </label>
+            <select type="text" class="campo_usuario" v-model="ps.User_id">
+                <option>   </option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+            </select>
+         </div>
         <button type="submit" class="btn btn-primary">Registrar</button>
         <button class="btn btn-secondary" v-on:click="loadHome">Atras</button>
     </form>
@@ -80,14 +87,12 @@
                 tipo_documento: "",
                 numero_documento: "",
                 genero: "",
-                tipo: "",
-                ciudad: "",
                 fecha_nacimiento: "",
                 especialidad_id: "",
                 registro: "",
                 telefono: "",
                 correo_electronico: "",
-                User_id: 1,
+                User_id: "",
             }
         }
     },
@@ -124,14 +129,12 @@
                         tipo_documento: this.ps.tipo_documento,
                         numero_documento: this.ps.numero_documento,
                         genero: this.ps.genero,
-                        tipo: this.ps.tipo,
-                        ciudad: this.ps.ciudad,
                         fecha_nacimiento: this.ps.fecha_nacimiento,
                         especialidad_id: this.ps.especialidad_id,
                         registro: this.ps.registro,
                         telefono: this.ps.telefono,
                         correo_electronico: this.ps.correo_electronico,
-                        User_id: 1
+                        User_id: this.ps.User_id
                     }
                 )
                 .then((result) => {
