@@ -7,7 +7,7 @@
              <br>
              <input type="password" v-model="user.password" placeholder="Password">
              <br>
-             <input type="text" v-model="user.name" placeholder="Name">
+             <input type="text" v-model="user.rol" placeholder="Rol">
              <br>
              <input type="email" v-model="user.email" placeholder="Email">
              <br>
@@ -25,7 +25,7 @@ export default {
             user: {
                 username: "",
                 password: "",
-                name: "",
+                rol: "",
                 email: "",
             }
         }
@@ -40,7 +40,7 @@ export default {
                     {
                         username: this.user.username,
                         password: this.user.password,
-                        name: this.user.name,
+                        rol: this.user.rol,
                         email: this.user.email,
                     }
                 )
