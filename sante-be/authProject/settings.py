@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
-import django_heroku
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,10 +26,7 @@ SECRET_KEY = 'django-insecure-um3$0x$n-^l-aphbb%5r01llnjx#%kam@1otxhk*(1j1wero7%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-CORS_ALLOW_ALL_ORIGINS = True
-
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
@@ -44,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'authApp',
-    'corsheaders',
+    'corsheaders'
 ]
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
@@ -57,6 +52,7 @@ SIMPLE_JWT = {
     'USER_ID_CLAIM': 'user_id',
 }
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -64,7 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "corsheaders.middleware.CorsMiddleware",
+    
 ]
 
 REST_FRAMEWORK = {
@@ -103,16 +99,15 @@ WSGI_APPLICATION = 'authProject.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-   'default': {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dacoojb56539ii',
-        'USER': 'aryrocrlwmymwf',
-        'PASSWORD': 'a1f2865463e6994a7ffc600a373842576069c526c5b0bd32c276e6bbf1e39053',
-        'HOST': 'ec2-34-194-158-176.compute-1.amazonaws.com',
+        'NAME': 'deqe68r9j0no9n',
+        'USER': 'ltahvqwjnjjkio',
+        'PASSWORD': '23ab7b8ff5774d01636cb9c16d09d842be5c50e021b885cb2f8162cc517cefea',
+        'HOST': 'ec2-44-207-253-50.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -155,6 +150,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+import django_heroku
 django_heroku.settings(locals())
-
-
