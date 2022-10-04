@@ -8,7 +8,7 @@
         <form id="FormularioSerchPs" v-on:submit.prevent="processPsSearch">
             <div class="form-group">
                 <span>Busque personal de salud ingresando el ID</span><br><br>
-               <input v-model="ps.id" type="text" class="campo_texto searchId">
+               <input v-model="ps.ps_id" type="text" class="campo_texto searchId">
                <div class="buttons">
                 <button class="btn buscar" type="submit">Buscar</button>
                 <button class="btn atras" v-on:click="loadHome">Atras</button>
@@ -27,7 +27,7 @@
     data: function() {
         return {
             ps: {
-                id: ""
+                ps_id: ""
             }
         }
     },
@@ -51,26 +51,31 @@
                     name: "home"
                 });
         },
+        
         processPsSearch: function() {
-            let url = "https://mision-tic-sante-be.herokuapp.com/personalsalud/" + this.ps.id;
+            let uno=3
+            let url = `https://mision-tic-sante-be.herokuapp.com/personalsalud/${this.ps.ps_id}/`;
             axios.get(url)
-                .then((result) => {
-                    //alert("Exito");
+            .then((result) => {
+                    alert("Exito");
                     localStorage.setItem("nombre",result.data.nombre);
                     localStorage.setItem("apellido",result.data.apellido);
                     localStorage.setItem("tipo_documento",result.data.tipo_documento);
+                    localStorage.setItem("numero_documento",result.data.numero_documento);
                     localStorage.setItem("genero",result.data.genero);
-                    localStorage.setItem("tipo",result.data.tipo_documento);
                     localStorage.setItem("fecha_nacimiento",result.data.fecha_nacimiento);
                     localStorage.setItem("especialidad_id",result.data.especialidad_id);
                     localStorage.setItem("registro",result.data.registro);
                     localStorage.setItem("telefono",result.data.telefono);
                     localStorage.setItem("correo_electronico",result.data.correo_electronico);
+                    localStorage.setItem("User_id",result.data.User_id);
 
                     this.$router.push({
                         name: "pssingle",
                     });
                     console.log(result);
+
+                    
 
                 })
                 .catch((error) => {

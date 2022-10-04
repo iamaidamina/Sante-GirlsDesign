@@ -9,15 +9,14 @@
             <ul>
                 <li><span>Nombre: </span>{{nombre}}</li>
                 <li><span>Apellido: </span>{{apellido}}</li>
-                <li><span>tipo_documento: </span>{{tipo_documento}}</li>
-                <li><span>genero: </span>{{genero}}</li>
-                <li><span>tipo: </span>{{tipo}}</li>
-                <li><span>ciudad: </span>{{ciudad}}</li>
-                <li><span>fecha_nacimiento: </span>{{fecha_nacimiento}}</li>
-                <li><span>especialidad_id: </span>{{especialidad_id}}</li>
-                <li><span>registro: </span>{{registro}}</li>
-                <li><span>telefono: </span>{{telefono}}</li>
-                <li><span>correo_electronico</span>: {{correo_electronico}}</li>
+                <li><span>Tipo Documento: </span>{{tipo_documento}}</li>
+                <li><span>Número Documento: </span>{{numero_documento}}</li>
+                <li><span>Genero: </span>{{genero}}</li>
+                <li><span>Fecha Nacimiento: </span>{{fecha_nacimiento}}</li>
+                <li><span>Especialidad ID: </span>{{especialidad_id}}</li>
+                <li><span>Registro: </span>{{registro}}</li>
+                <li><span>Telefono: </span>{{telefono}}</li>
+                <li><span>Correo Electronico</span>: {{correo_electronico}}</li>
             </ul>
             <button v-on:click="loadHome" class="btn"> Atras </button>
         </div>
@@ -34,8 +33,8 @@
             nombre: localStorage.getItem("nombre"),
             apellido:localStorage.getItem("apellido"),
             tipo_documento:localStorage.getItem("tipo_documento"),
+            numero_documento:localStorage.getItem("numero_documento"),
             genero: localStorage.getItem("genero"),
-            tipo: localStorage.getItem("tipo"),
             fecha_nacimiento: localStorage.getItem("fecha_nacimiento"),
             especialidad_id:  localStorage.getItem("especialidad_id"),
             registro: localStorage.getItem("registro"),
