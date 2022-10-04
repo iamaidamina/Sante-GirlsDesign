@@ -171,15 +171,7 @@
         border: 2px solid rgb(111, 168, 220);
         color: rgb(0, 0, 0);
         text-decoration: none;
-        background: rgb(111, 168, 220);
-
-        
-    }
-
-    .btn:hover {
-        
-    
-        
+        background: rgb(111, 168, 220);        
     }
 
     .content {
