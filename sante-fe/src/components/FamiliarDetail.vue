@@ -9,13 +9,13 @@
             <ul>
                 <li><span>Nombre: </span>{{nombre}}</li>
                 <li><span>Apellido: </span>{{apellido}}</li>
-                <li><span>tipo_documento: </span>{{tipo_documento}}</li>
-                <li><span>numero_documento: </span>{{numero_documento}}</li>
-                <li><span>parentesco: </span>{{parentesco}}</li>
-                <li><span>genero: </span>{{genero}}</li>
-                <li><span>telefono: </span>{{telefono}}</li>
-                <li><span>correo_electronico: </span>{{correo_electronico}}</li>
-                <li><span>paciente_id_id</span>: {{paciente_id}}</li>
+                <li><span>Tipo Documento: </span>{{tipo_documento}}</li>
+                <li><span>Numero Documento: </span>{{numero_documento}}</li>
+                <li><span>Parentesco: </span>{{parentesco}}</li>
+                <li><span>Genero: </span>{{genero}}</li>
+                <li><span>Telefono: </span>{{telefono}}</li>
+                <li><span>Correo Electronico: </span>{{correo_electronico}}</li>
+                <li><span>ID paciente</span>: {{paciente_id}}</li>
             </ul>
             <button v-on:click="loadHome" class="btn"> Atras </button>
         </div>
@@ -46,7 +46,7 @@
         loadHome: function() {
             console.log("Si funciona");
             this.$router.push({
-                    name: "searchPs"
+                    name: "familiar"
                 });
         },
         loadSearchPs: function() {

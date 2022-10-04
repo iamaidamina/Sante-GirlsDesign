@@ -1,7 +1,7 @@
 <template>
     <div class="left-sidebar">
         <img src = "./../assets/images/user.png" height="120" width="120">
-        <span style="text-align:center; margin:30px; font-size:30px">Histiria clinica</span> 
+        <span style="text-align:center; margin:30px; font-size:30px">Historia clinica</span> 
        
     </div>
     <div class="content">
@@ -10,8 +10,8 @@
                 <li><span>Diagnosctico: </span>{{diagnostico}}</li>
                 <li><span>Evolucion: </span>{{evolucion}}</li>
                 <li><span>Sugerencia: </span>{{sugerencias_cuidado}}</li>
-                <li><span>paciente (Id): </span>{{paciente_id_id}}</li>
-                <li><span>  Medico encargado (Id): </span>{{ps_id_id}}</li>
+                <li><span>Paciente ( ID ): </span>{{paciente_id}}</li>
+                <li><span>Medico encargado ( ID ): </span>{{ps_id}}</li>
                 
             </ul>
             <button v-on:click="loadHome" class="btn"> Atras </button>
@@ -27,10 +27,10 @@
     data: function() {
         return {
             diagnostico: localStorage.getItem("diagnostico"),
-            evoluciono:localStorage.getItem("evolucion"),
-            sugerencias_cuidado:localStorage.getItem("sugerencias_cuidado"),
-            paciente_id_id: localStorage.getItem("paciente_id_id"),
-            ps_id_id: localStorage.getItem("ps_id_id"),
+            evolucion:localStorage.getItem("evolucion"),
+            sugerencias_cuidado:localStorage.getItem("sugerencia"),
+            paciente_id: localStorage.getItem("paciente_id"),
+            ps_id: localStorage.getItem("ps_id"),
            
         }
     },
@@ -143,12 +143,6 @@
         text-decoration: none;
         background: rgb(111, 168, 220);
 
-        
-    }
-
-    .btn:hover {
-        
-    
         
     }
 

@@ -1,7 +1,7 @@
 <template>
     <div class="left-sidebar">
         <img src = "./../assets/images/user.png" height="120" width="120">
-        <span style="text-align:center; margin:30px; font-size:30px">Personal Salud Single</span> 
+        <span style="text-align:center; margin:30px; font-size:30px">Personal Salud</span> 
        
     </div>
     <div class="content">
@@ -9,15 +9,14 @@
             <ul>
                 <li><span>Nombre: </span>{{nombre}}</li>
                 <li><span>Apellido: </span>{{apellido}}</li>
-                <li><span>tipo_documento: </span>{{tipo_documento}}</li>
-                <li><span>genero: </span>{{genero}}</li>
-                <li><span>tipo: </span>{{tipo}}</li>
-                <li><span>ciudad: </span>{{ciudad}}</li>
-                <li><span>fecha_nacimiento: </span>{{fecha_nacimiento}}</li>
-                <li><span>especialidad_id: </span>{{especialidad_id}}</li>
-                <li><span>registro: </span>{{registro}}</li>
-                <li><span>telefono: </span>{{telefono}}</li>
-                <li><span>correo_electronico</span>: {{correo_electronico}}</li>
+                <li><span>Tipo Documento: </span>{{tipo_documento}}</li>
+                <li><span>Genero: </span>{{genero}}</li>
+                <li><span>Tipo: </span>{{tipo}}</li>
+                <li><span>Fecha Nacimiento: </span>{{fecha_nacimiento}}</li>
+                <li><span>Especialidad ( ID ): </span>{{especialidad_id}}</li>
+                <li><span>Registro: </span>{{registro}}</li>
+                <li><span>Telefono: </span>{{telefono}}</li>
+                <li><span>Correo Electronico:</span> {{correo_electronico}}</li>
             </ul>
             <button v-on:click="loadHome" class="btn"> Atras </button>
         </div>
@@ -152,12 +151,6 @@
         text-decoration: none;
         background: rgb(111, 168, 220);
 
-        
-    }
-
-    .btn:hover {
-        
-    
         
     }
 

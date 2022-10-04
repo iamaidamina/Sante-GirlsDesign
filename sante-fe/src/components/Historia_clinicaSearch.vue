@@ -58,9 +58,9 @@
                     //alert("Exito");
                     localStorage.setItem("diagnostico",result.data.diagnostico);
                     localStorage.setItem("evolucion",result.data.evolucion);
-                    localStorage.setItem("sugerencia_cuidado",result.data.sugerencia_cuidado);
-                    localStorage.setItem("paciente_id_id",result.data.paciente_id);
-                    localStorage.setItem("ps_id_id",result.data.ps_id);
+                    localStorage.setItem("sugerencia",result.data.sugerencias_cuidado);
+                    localStorage.setItem("paciente_id",result.data.paciente_id);
+                    localStorage.setItem("ps_id",result.data.ps_id);
                     
 
                     this.$router.push({
@@ -168,14 +168,6 @@
         color: rgb(0, 0, 0);
         text-decoration: none;
         background: rgb(111, 168, 220);
-
-        
-    }
-
-    .btn:hover {
-        
-    
-        
     }
 
     .content {

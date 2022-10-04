@@ -66,9 +66,12 @@
                     localStorage.setItem("registro",result.data.registro);
                     localStorage.setItem("telefono",result.data.telefono);
                     localStorage.setItem("correo_electronico",result.data.correo_electronico);
+                    localStorage.setItem("ciudad",result.data.ciudad);
+                    localStorage.setItem("direccion",result.data.direccion);
+                    localStorage.setItem("ps_id",result.data.ps_id);
 
                     this.$router.push({
-                        name: "pssingle",
+                        name: "pacientedetail",
                     });
                     console.log(result);
 
@@ -171,8 +174,11 @@
         border: 2px solid rgb(111, 168, 220);
         color: rgb(0, 0, 0);
         text-decoration: none;
-        background: rgb(111, 168, 220);        
+        background: rgb(111, 168, 220);
+
+        
     }
+
 
     .content {
         height: auto;

@@ -14,11 +14,11 @@
                 <input type="text" class="campo_texto evolucion" v-model="ps.evolucion">
             </div>
             <div class="form-group">
-                <label>Sugerencias cuidado: </label>
+                <label>Sugerencias: </label>
                 <input type="text" class="campo_texto sugerencias_cuidado" v-model="ps.sugerencias_cuidado">
             </div>
             <div class="form-group">
-                <label>PAciente ( ID ): </label>  
+                <label>Paciente ( ID ): </label>  
                 <input type="text" class="campo_texto paciente_id_id" v-model="ps.paciente_id_id">
             </div>
             <div class="form-group">

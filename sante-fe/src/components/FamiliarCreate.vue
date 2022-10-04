@@ -39,7 +39,7 @@
             <label>Correo electronico:</label> <input type="text" class="campo_texto correo_electronico " v-model="ps.correo_electronico">
        </div>
        <div class="form-group">
-            <label>Familiar de Paciente ( ID ):</label> <input type="text" class="campo_texto paciente_id_id " v-model="ps.paciente_id_id">
+            <label>Familiar de: ( Paciente  ID ):</label> <input type="text" class="campo_texto paciente_id_id " v-model="ps.paciente_id_id">
        </div>
        <div class="form-group">
             <label>Parentesco:</label> <input type="text" class="campo_texto paciente_id " v-model="ps.parentesco">

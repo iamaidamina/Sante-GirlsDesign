@@ -95,11 +95,6 @@
     font-size: 20px;
 }
 
-
-
-
-
-
 .title {
     margin-bottom: 40px;
     font-size: 60px;
@@ -128,18 +123,8 @@ p {
         border: 2px solid rgb(111, 168, 220);
         color: rgb(0, 0, 0);
         text-decoration: none;
-        background: rgb(111, 168, 220);
-
-        
+        background: rgb(111, 168, 220); 
     }
-
-
-    .btn:hover {
-        
-    
-        
-    }
-
 
 .content {
     height: auto;

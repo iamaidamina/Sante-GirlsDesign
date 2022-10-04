@@ -176,12 +176,6 @@
         
     }
 
-    .btn:hover {
-        
-    
-        
-    }
-
     .content {
         height: auto;
         display: flex;

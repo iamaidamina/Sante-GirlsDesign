@@ -11,14 +11,13 @@
                 <li><span>Apellido: </span>{{apellido}}</li>
                 <li><span>Tipo Documento: </span>{{tipo_documento}}</li>
                 <li><span>Numero Documento: </span>{{numero_documento}}</li>
-                <li><span>fecha_nacimiento: </span>{{fecha_nacimiento}}</li>
+                <li><span>Fecha de Nacimiento: </span>{{fecha_nacimiento}}</li>
                 <li><span>Genero: </span>{{genero}}</li>
-                <li><span>telefono: </span>{{telefono}}</li>
+                <li><span>Telefono: </span>{{telefono}}</li>
                 <li><span>Correo Electronico</span>: {{correo_electronico}}</li>
                 <li><span>Direccion: </span>{{direccion}}</li>
                 <li><span>Ciudad: </span>{{ciudad}}</li>
-                <li><span>User_id_id: </span>{{User_id_id}}</li>
-                <li><span>ps_id_id: </span>{{ps_id_id}}</li>
+                <li><span>Medico asignado ( ID ): </span>{{ps_id}}</li>
                 
             </ul>
             <button v-on:click="loadHome" class="btn"> Atras </button>
@@ -46,9 +45,6 @@
             User_id:localStorage.getItem("User_id"),
             ps_id:localStorage.getItem("ps_id"),
 
-
-
-
         }
     },
     components: {},
@@ -56,7 +52,7 @@
         loadHome: function() {
             console.log("Si funciona");
             this.$router.push({
-                    name: "searchPs"
+                    name: "pacientesearch"
                 });
         },
         loadSearchPs: function() {
@@ -160,12 +156,6 @@
         text-decoration: none;
         background: rgb(111, 168, 220);
 
-        
-    }
-
-    .btn:hover {
-        
-    
         
     }
 

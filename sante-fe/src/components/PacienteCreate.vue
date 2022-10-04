@@ -38,17 +38,17 @@
             <label>Telefono:</label> <input type="text" class="campo_texto telefono" v-model="ps.telefono">
        </div>
        <div class="form-group">
-            <label>correo_electronico:</label> <input type="text" class="campo_texto correo_electronico" v-model="ps.correo_electronico">
+            <label>Correo Electronico:</label> <input type="text" class="campo_texto correo_electronico" v-model="ps.correo_electronico">
        </div>
          
         <div class="form-group">
             <label>Direccion:</label> <input type="text" class="campo_texto direccion" v-model="ps.direccion">
        </div>
        <div class="form-group">
-            <label>ciudad:</label> <input type="text" class="campo_texto ciudad" v-model="ps.ciudad">
+            <label>Ciudad:</label> <input type="text" class="campo_texto ciudad" v-model="ps.ciudad">
        </div>
         <div class="form-group">
-            <label>Medico Asignado (ID)</label> <input type="text" class="campo_texto ps.ps_id_id" v-model="ps.ps_id">
+            <label>Medico Asignado (ID): </label> <input type="text" class="campo_texto ps.ps_id_id" v-model="ps.ps_id">
        </div>
         
         <button type="submit" class="btn btn-primary">Registrar</button>

@@ -226,10 +226,17 @@
         font-family: 'Open Sans', sans-serif;
     }
 
+    .ps_data {
+        margin-top: 50px;
+    }
+
     .pie-pagina{
         width: 100%;
         background-color: #b6ddff;
+        position: relative;
+        bottom: 0;
     }
+
     .pie-pagina .grupo-1{
         width: 100%;
         max-width: 1200px;
@@ -297,7 +304,7 @@
         width: 50px;
     }
 
-    .content {width: 70%}
+    .content {width: 70%; min-height: 770px;}
 
     .content.formulario form {
         border: 1px solid #000;
@@ -337,6 +344,7 @@
     .buttons {
         display: flex;
     }
+    
     @media screen and (max-width:800px){
         .pie-pagina .grupo-1{
             width: 90%;
