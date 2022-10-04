@@ -37,7 +37,7 @@
             processLogInUser: function() {
                 console.log('Si funciona!');
                 axios.post(
-                        "https://mision-tic-sante-be.herokuapp.com/login/",
+                        "https://sane-hospital-vjoha.herokuapp.com/login/",
                         {
                             "username":this.user.username,
                             "password":this.user.password,

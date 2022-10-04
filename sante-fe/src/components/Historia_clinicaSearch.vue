@@ -1,17 +1,17 @@
 <template>
     <div class="left-sidebar">
         <img src = "./../assets/images/user.png" height="120" width="120">
-        <span style="text-align:center; margin:30px; font-size:30px">Buscar Personal Salud</span> 
+        <span style="text-align:center; margin:30px; font-size:30px">Buscar Historia clinica</span> 
        
     </div>
     <div class="content">
         <form id="FormularioSerchPs" v-on:submit.prevent="processPsSearch">
             <div class="form-group">
-                <span>Busque personal de salud ingresando el ID</span><br><br>
-               <input v-model="ps.id" type="text" class="campo_texto searchId">
-               <div class="buttons">
-                <button class="btn buscar" type="submit">Buscar</button>
-                <button class="btn atras" v-on:click="loadHome">Atras</button>
+                <span>Busque Historia clinica ingresando el ID</span><br><br>
+                <input v-model="ps.id" type="text" class="campo_texto searchId">
+                <div class="buttons">
+                    <button class="btn buscar" type="submit">Buscar</button>
+                    <button class="btn atras" v-on:click="loadHome">Atras</button>
                </div> 
                
             </div>
@@ -36,7 +36,7 @@
         loadHome: function() {
             console.log("Si funciona");
             this.$router.push({
-                    name: "personalsalud"
+                    name: "historiaclinica"
                 });
         },
         loadSearchPs: function() {
@@ -52,30 +52,32 @@
                 });
         },
         processPsSearch: function() {
-            let url = "https://mision-tic-sante-be.herokuapp.com/personalsalud/" + this.ps.id;
+            let url = "https://sane-hospital-vjoha.herokuapp.com/historiasclinicas/" + this.ps.id;
             axios.get(url)
                 .then((result) => {
                     //alert("Exito");
-                    localStorage.setItem("nombre",result.data.nombre);
-                    localStorage.setItem("apellido",result.data.apellido);
-                    localStorage.setItem("tipo_documento",result.data.tipo_documento);
-                    localStorage.setItem("genero",result.data.genero);
-                    localStorage.setItem("tipo",result.data.tipo_documento);
-                    localStorage.setItem("fecha_nacimiento",result.data.fecha_nacimiento);
-                    localStorage.setItem("especialidad_id",result.data.especialidad_id);
-                    localStorage.setItem("registro",result.data.registro);
-                    localStorage.setItem("telefono",result.data.telefono);
-                    localStorage.setItem("correo_electronico",result.data.correo_electronico);
+                    localStorage.setItem("diagnostico",result.data.diagnostico);
+                    localStorage.setItem("evolucion",result.data.evolucion);
+                    localStorage.setItem("sugerencia_cuidado",result.data.sugerencia_cuidado);
+                    localStorage.setItem("paciente_id_id",result.data.paciente_id);
+                    localStorage.setItem("ps_id_id",result.data.ps_id);
+                    
 
                     this.$router.push({
-                        name: "pssingle",
+                        name: "historiaclinicadetail",
                     });
                     console.log(result);
 
                 })
                 .catch((error) => {
                     console.log(error.response);
-                    alert("Error... ");
+                    let status = error.response.status;
+                    let statusText = error.response.statusText;
+                    if(status == 404){
+                        alert("El ID que esta buscando no existe! Porfavor busque otro ID ");
+                    } else {
+                        alert("Error... " + status + " " + statusText );
+                    }  
                 });
         }
     }

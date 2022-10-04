@@ -37,7 +37,7 @@
     
 <script>
     export default {
-    name: "Signosvitales",
+    name: "SignosVitales",
     data: function() {
         return {
             username: localStorage.getItem('username') || "none"

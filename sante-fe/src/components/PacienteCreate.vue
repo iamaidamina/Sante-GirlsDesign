@@ -1,7 +1,7 @@
 <template>
     <div class="left-sidebar">
         <img src = "./../assets/images/user.png" height="120" width="120">
-        <span style="text-align:center; margin:30px; font-size:30px">Crear Personal Salud</span> 
+        <span style="text-align:center; margin:30px; font-size:30px">Crear Paciente</span> 
        
     </div>
     <div class="content formulario">
@@ -14,61 +14,43 @@
         </div>
         <div class="form-group">
             <label>Tipo de Documento: </label>
-            <select type="text" class="campo_texto " v-model="ps.tipo_documento">
+            <select type="text" class="campo_texto tipo_documento" v-model="ps.tipo_documento">
                 <option>   </option>
+                <option>T.I</option>
                 <option>C.C</option>
-                <option>C.E</option>
             </select> 
         </div>
         <div class="form-group">
-            <label>Numero de Documento: </label>  <input type="text" class="campo_texto " v-model="ps.numero_documento">
+            <label>Numero de Documento: </label>  <input type="text" class="campo_texto numero_documento" v-model="ps.numero_documento">
         </div>
         <div class="form-group">
+            <label>Fecha Nacimiento:</label> <input type="date" class="campo_texto fecha_nacimiento " v-model="ps.fecha_nacimiento">
+       </div>
+        <div class="form-group">
             <label>Genero: </label>
-            <select type="text" class="campo_texto " v-model="ps.genero">
+            <select type="text" class="campo_texto genero" v-model="ps.genero">
                 <option>   </option>
                 <option>M</option>
                 <option>F</option>
             </select>
          </div>
-       <div class="form-group">
-            <label>Telefono:</label> <input type="text" class="campo_texto " v-model="ps.telefono">
+         <div class="form-group">
+            <label>Telefono:</label> <input type="text" class="campo_texto telefono" v-model="ps.telefono">
        </div>
        <div class="form-group">
-            <label>Email:</label> <input type="text" class="campo_texto " v-model="ps.correo_electronico">
+            <label>correo_electronico:</label> <input type="text" class="campo_texto correo_electronico" v-model="ps.correo_electronico">
+       </div>
+         
+        <div class="form-group">
+            <label>Direccion:</label> <input type="text" class="campo_texto direccion" v-model="ps.direccion">
+       </div>
+       <div class="form-group">
+            <label>ciudad:</label> <input type="text" class="campo_texto ciudad" v-model="ps.ciudad">
        </div>
         <div class="form-group">
-            <label>Fecha Nacimiento:</label> <input type="date" class="campo_texto " v-model="ps.fecha_nacimiento">
+            <label>Medico Asignado (ID)</label> <input type="text" class="campo_texto ps.ps_id_id" v-model="ps.ps_id">
        </div>
-        <div class="form-group">
-            <label>Especialidad: </label>
-            <select type="text" class="campo_especialidad" v-model="ps.especialidad_id">
-                <option>   </option>
-                <option value=1>Enfermería</option>
-                <option value=2>General</option>
-                <option value=3>Ortopedía</option>
-                <option value=4>Geriatría</option>
-            </select>
-         </div>
-        <div class="form-group">
-        <label>Registro: </label> <input type="text" class="campo_registro" v-model="ps.registro">
-        </div>
-        <div class="form-group">
-            <label>Usuario: </label>
-            <select type="text" class="campo_usuario" v-model="ps.User_id">
-                <option>   </option>
-                <option value=1>1</option>
-                <option value=2>2</option>
-                <option value=3>3</option>
-                <option value=4>4</option>
-                <option value=5>5</option>
-                <option value=6>6</option>
-                <option value=7>7</option>
-                <option value=8>8</option>
-                <option value=9>9</option>
-                <option value=10>10</option>
-            </select>
-         </div>
+        
         <button type="submit" class="btn btn-primary">Registrar</button>
         <button class="btn btn-secondary" v-on:click="loadHome">Atras</button>
     </form>
@@ -78,7 +60,7 @@
 <script>
     import axios from 'axios';
     export default {
-    name: "CreatePs",
+    name: "PacienteCreate",
     data: function() {
         return {
             ps: {
@@ -86,13 +68,15 @@
                 apellido: "",
                 tipo_documento: "",
                 numero_documento: "",
-                genero: "",
                 fecha_nacimiento: "",
-                especialidad_id: "",
-                registro: "",
+                genero: "",
                 telefono: "",
                 correo_electronico: "",
-                User_id: "",
+                direccion: "",
+                ciudad: "",
+                User_id: 1,
+                ps_id: "",
+                
             }
         }
     },
@@ -101,7 +85,7 @@
         loadHome: function() {
             console.log("Si funciona");
             this.$router.push({
-                    name: "personalsalud"
+                    name: "paciente"
                 });
         },
         loadSearchPs: function() {
@@ -122,33 +106,35 @@
         // - 2. El json con el contenido a enviar.
         processPsSignUp: function() {
             axios.post(
-                    "https://mision-tic-sante-be.herokuapp.com/personalsalud/",
+                    "https://sane-hospital-vjoha.herokuapp.com/pacientes/",
                     {
                         nombre: this.ps.nombre,
                         apellido: this.ps.apellido,
                         tipo_documento: this.ps.tipo_documento,
                         numero_documento: this.ps.numero_documento,
-                        genero: this.ps.genero,
                         fecha_nacimiento: this.ps.fecha_nacimiento,
-                        especialidad_id: this.ps.especialidad_id,
-                        registro: this.ps.registro,
+                        genero: this.ps.genero,
                         telefono: this.ps.telefono,
                         correo_electronico: this.ps.correo_electronico,
-                        User_id: this.ps.User_id
+                        direccion: this.ps.direccion, 
+                        ciudad: this.ps.ciudad,
+                        User_id: 1,
+                        ps_id: this.ps.ps_id,
+                        latitud_longitud: "una longitud",
                     }
                 )
                 .then((result) => {
                     alert("Registro exitoso.")
                     this.$router.push({
-                        name: "personalsalud"
+                        name: "paciente"
                     });
 
                 })
                 .catch((error) => {
                     console.log(error.response.data);
-                    alert("Error en el registro. ");
+                    alert("Error en el registro. Uno de los IDs foraneos no existe.");
                     this.$router.push({
-                        name: "personalsalud"
+                        name: "paciente"
                     });
 
                 });

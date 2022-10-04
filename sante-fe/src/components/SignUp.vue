@@ -7,7 +7,7 @@
              <br>
              <input type="password" v-model="user.password" placeholder="Password">
              <br>
-             <input type="text" v-model="user.rol" placeholder="Rol">
+             <input type="text" v-model="user.name" placeholder="Name">
              <br>
              <input type="email" v-model="user.email" placeholder="Email">
              <br>
@@ -25,7 +25,7 @@ export default {
             user: {
                 username: "",
                 password: "",
-                rol: "",
+                name: "",
                 email: "",
             }
         }
@@ -36,11 +36,11 @@ export default {
         // - 2. El json con el contenido a enviar.
         processSignUp: function() {
             axios.post(
-                    "https://mision-tic-sante-be.herokuapp.com/users/",
+                    "https://sane-hospital-vjoha.herokuapp.com/users/",
                     {
                         username: this.user.username,
                         password: this.user.password,
-                        rol: this.user.rol,
+                        name: this.user.name,
                         email: this.user.email,
                     }
                 )

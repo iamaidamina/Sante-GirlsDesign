@@ -1,7 +1,7 @@
 <template>
     <div class="left-sidebar">
         <img src = "./../assets/images/user.png" height="120" width="120">
-        <span style="text-align:center; margin:30px; font-size:30px">Personal Salud Single</span> 
+        <span style="text-align:center; margin:30px; font-size:30px">Paciente</span> 
        
     </div>
     <div class="content">
@@ -9,15 +9,17 @@
             <ul>
                 <li><span>Nombre: </span>{{nombre}}</li>
                 <li><span>Apellido: </span>{{apellido}}</li>
-                <li><span>tipo_documento: </span>{{tipo_documento}}</li>
-                <li><span>genero: </span>{{genero}}</li>
-                <li><span>tipo: </span>{{tipo}}</li>
-                <li><span>ciudad: </span>{{ciudad}}</li>
+                <li><span>Tipo Documento: </span>{{tipo_documento}}</li>
+                <li><span>Numero Documento: </span>{{numero_documento}}</li>
                 <li><span>fecha_nacimiento: </span>{{fecha_nacimiento}}</li>
-                <li><span>especialidad_id: </span>{{especialidad_id}}</li>
-                <li><span>registro: </span>{{registro}}</li>
+                <li><span>Genero: </span>{{genero}}</li>
                 <li><span>telefono: </span>{{telefono}}</li>
-                <li><span>correo_electronico</span>: {{correo_electronico}}</li>
+                <li><span>Correo Electronico</span>: {{correo_electronico}}</li>
+                <li><span>Direccion: </span>{{direccion}}</li>
+                <li><span>Ciudad: </span>{{ciudad}}</li>
+                <li><span>User_id_id: </span>{{User_id_id}}</li>
+                <li><span>ps_id_id: </span>{{ps_id_id}}</li>
+                
             </ul>
             <button v-on:click="loadHome" class="btn"> Atras </button>
         </div>
@@ -28,19 +30,25 @@
 <script>
 
     export default {
-    name: "PsDetailSingle",
+    name: "PacienteDetail",
     data: function() {
         return {
             nombre: localStorage.getItem("nombre"),
             apellido:localStorage.getItem("apellido"),
             tipo_documento:localStorage.getItem("tipo_documento"),
-            genero: localStorage.getItem("genero"),
-            tipo: localStorage.getItem("tipo"),
+            numero_documento:localStorage.getItem( "Numero_documento:"),
             fecha_nacimiento: localStorage.getItem("fecha_nacimiento"),
-            especialidad_id:  localStorage.getItem("especialidad_id"),
-            registro: localStorage.getItem("registro"),
-            telefono:  localStorage.getItem("telefono"),
-            correo_electronico:  localStorage.getItem("correo_electronico")
+            genero:localStorage.getItem("genero"),
+            telefono:localStorage.getItem("telefono"),
+            correo_electronico:localStorage.getItem("correo_electronico"),
+            direccion:localStorage.getItem("direccion"),
+            ciudad:localStorage.getItem("ciudad"),
+            User_id:localStorage.getItem("User_id"),
+            ps_id:localStorage.getItem("ps_id"),
+
+
+
+
         }
     },
     components: {},

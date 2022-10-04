@@ -1,95 +1,109 @@
 <template>
     <div class="left-sidebar">
         <img src = "./../assets/images/user.png" height="120" width="120">
-        <span style="text-align:center; margin:30px; font-size:30px">Bienvenido: <br>{{username}}</span> 
+        <span style="text-align:center; margin:30px; font-size:30px">Histiria clinica</span> 
+       
     </div>
-    <div class="content sau">
-        <div class="box-container">
-           <div class="box">
-                <a class="box-item" v-on:click="loadPaciente" >
-                    <br>
-                    <img src = "./../assets/images/paciente2.png" height="90" >
-                    <br>
-                    <h3>Paciente</h3>
-                </a>
-            </div>
-            <div class="box">
-                <a class="box-item" v-on:click="loadPersonaSalud" >
-                    <br>
-                    <img src = "./../assets/images/personalsalud1.png" height="90" width="90">
-                    <br>
-                    <h3>Personal Salud</h3>
-                </a>
-            </div>
-            <div class="box">
-                <a class="box-item" v-on:click="loadfamiliar" >
-            
-                    <br>
-                    <img src = "./../assets/images/familiar2.png" height="90" width="90">
-                    <br>
-                    <h3>Familiar</h3>
-                </a>
-            </div>
-
-            <div class="box">
-                <a class="box-item" v-on:click="loadHistoriaclinica" >
-                    <br>
-                    <img src = "./../assets/images/historiaclinica2.png" height="90" width="90">
-                    <br>
-                    <h3>Historia Clínica</h3>
-                </a>
-            </div>   
+    <div class="content">
+        <div class="ps_data">
+            <ul>
+                <li><span>Diagnosctico: </span>{{diagnostico}}</li>
+                <li><span>Evolucion: </span>{{evolucion}}</li>
+                <li><span>Sugerencia: </span>{{sugerencias_cuidado}}</li>
+                <li><span>paciente (Id): </span>{{paciente_id_id}}</li>
+                <li><span>  Medico encargado (Id): </span>{{ps_id_id}}</li>
+                
+            </ul>
+            <button v-on:click="loadHome" class="btn"> Atras </button>
         </div>
+
     </div>
 </template>
     
 <script>
+
     export default {
-    name: "Home",
+    name: "Historia_clinicaDetail",
     data: function() {
         return {
-            username: localStorage.getItem('username') || "none"
+            diagnostico: localStorage.getItem("diagnostico"),
+            evoluciono:localStorage.getItem("evolucion"),
+            sugerencias_cuidado:localStorage.getItem("sugerencias_cuidado"),
+            paciente_id_id: localStorage.getItem("paciente_id_id"),
+            ps_id_id: localStorage.getItem("ps_id_id"),
+           
         }
     },
     components: {},
     methods: {
-        loadPaciente: function() {
-            console.log("Si funciona");
-            this.$router.push({
-                    name: "paciente"
-                });
-        },
-        loadfamiliar: function() {
-            console.log("Si funciona");
-            this.$router.push({
-                    name: "familiar"
-                });
-        },
-        loadHistoriaclinica: function() {
+        loadHome: function() {
             console.log("Si funciona");
             this.$router.push({
                     name: "historiaclinica"
                 });
         },
-        loadSignosvitales: function() {
+        loadSearchPs: function() {
             console.log("Si funciona");
             this.$router.push({
-                    name: "signosvitales"
+                    name: "home"
                 });
         },
-        loadPersonaSalud: function() {
+        loadCreatePs: function() {
             console.log("Si funciona");
             this.$router.push({
-                    name: "personalsalud"
+                    name: "home"
                 });
-        },
+        }
     }
 }
 </script>
 <style> 
-    
+    #FormularioSerchPs input{
+        height: 30px;
+        width: 100%;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 16px;
+    }
+    #FormularioSerchPs div span{
+        height: 30px;
+        width: 100%;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 16px;
+        display: block;
+    }
+    #FormularioSerchPs div label{
+        height: 30px;
+        margin: auto;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        display: block;
+    }
+     .form-group {
+        margin: 16px;
+    }
+    .greetings{
+        margin: 0;
+        padding: 0%;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .greetings h1{
+        font-size: 50px;
+        color: #283747;
+    }
+    .greetings span{
+        color: #396fd5;
+        font-weight: bold;
+    }
     .logo {
-     margin-left: 30px;
+    margin-left: 30px;
     }
 
     .logo a {
@@ -104,7 +118,9 @@
         font-size: 60px;
         font-weight: 600;
         text-transform: uppercase;
-        color: rgb(0, 0, 0)  
+        color: rgb(0, 0, 0)
+        
+    
     }
 
     .title{
@@ -126,10 +142,16 @@
         color: rgb(0, 0, 0);
         text-decoration: none;
         background: rgb(111, 168, 220);
-    }
-    .btn:hover {
+
         
     }
+
+    .btn:hover {
+        
+    
+        
+    }
+
     .content {
         height: auto;
         display: flex;
@@ -142,10 +164,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center !important;
+        justify-content: flex-start;
+        align-items: center;
         margin: 100px 0;
         padding: 16px 0;
-
     }
     .sau {
         padding: 30px;
@@ -171,6 +193,8 @@
         margin: 2rem;   
     }
 
+
+
     .box-container .box h3 {
         font-size: 20px;
         color:rgb(19,79,92);
@@ -191,7 +215,8 @@
         .navbar {
             display: none;
         }
-
-        img{display: none;}
+    
+        
     }
+
 </style>

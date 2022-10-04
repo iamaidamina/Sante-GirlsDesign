@@ -8,7 +8,7 @@
         <div class="box-container">
             
             <div class="box">
-                <a v-on:click="loadCreatePs">
+                <a v-on:click="loadCreate">
                     <br>
                     <img src = "./../assets/images/userplus.png" height="90" >
                     <br>
@@ -16,7 +16,7 @@
                 </a>      
             </div>
             <div class="box">
-                <a v-on:click="loadSearchPs">
+                <a v-on:click="loadSearch">
                     <br>
                     <img src = "./../assets/images/magnifying-glass-search.png" height="90" >
                     <br>
@@ -51,16 +51,16 @@
                     name: "home"
                 });
         },
-        loadSearchPs: function() {
+        loadSearch: function() {
             console.log("Si funciona");
             this.$router.push({
-                    name: "searchPs"
+                    name: "pacientesearch"
                 });
         },
-        loadCreatePs: function() {
+        loadCreate: function() {
             console.log("Si funciona");
             this.$router.push({
-                    name: "createPs"
+                    name: "pacientecreate"
                 });
         },
     }

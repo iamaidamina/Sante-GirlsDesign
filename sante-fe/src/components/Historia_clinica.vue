@@ -54,13 +54,13 @@
         loadSearchPs: function() {
             console.log("Si funciona");
             this.$router.push({
-                    name: "searchPs"
+                    name: "historiaclinicasearch"
                 });
         },
         loadCreatePs: function() {
             console.log("Si funciona");
             this.$router.push({
-                    name: "createPs"
+                    name: "historiaclinicacreate"
                 });
         },
     }
